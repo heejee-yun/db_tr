@@ -59,8 +59,6 @@ where 1=1
 ;
 
 
-
-
 -- 팀리스트   / 
 select 
 	name
@@ -191,9 +189,136 @@ where
 order by 
 ; 
 
-select
-	a.
+CREATE TABLE IF NOT EXISTS `bts`.`memberUploaded` (
+  `seq` INT NOT NULL AUTO_INCREMENT,
+  `type` TINYINT NULL,
+  `defaultNy` TINYINT NULL,
+  `sort` TINYINT NULL,
+  `orinalName` VARCHAR(45) NULL,
+  `uuidName` VARCHAR(45) NULL,
+  `ext` VARCHAR(45) NULL,
+  `size` BIGINT NULL,
+  `delNy` TINYINT NULL,
+  `pseq` BIGINT NULL,
+  PRIMARY KEY (`seq`))
+ENGINE = InnoDB
+;
+
+insert into memberUploaded (
+  type
+  ,defaultNy
+  ,sort
+  ,orinalName
+  ,uuidName
+  ,ext
+  ,size
+  ,delNy
+  ,pseq
+)
+
+Values (
+	0
+    ,0
+    ,0
+    ,"프로밀사진수정후.png"
+    ,"6f087f0s0d8d56d54s7.png"
+    ,"png"
+    ,232435
+    ,0
+    ,1
+)
+;
+
+insert into memberUploaded (
+  type
+  ,defaultNy
+  ,sort
+  ,orinalName
+  ,uuidName
+  ,ext
+  ,size
+  ,delNy
+  ,pseq
+)
+
+Values (
+	0
+    ,1
+    ,1
+    ,"프로밀사진최종.png"
+    ,"6f087f0s0d8d56dd6e9.png"
+    ,"png"
+    ,28663
+    ,0
+    ,1
+)
+;
+
+insert into memberUploaded (
+  type
+  ,defaultNy
+  ,sort
+  ,orinalName
+  ,uuidName
+  ,ext
+  ,size
+  ,delNy
+  ,pseq
+)
+
+Values (
+	0
+    ,1
+    ,1
+    ,"김유정프로필사진.jpg"
+    ,"2nd94n3b5j5k3.jpg"
+    ,"jpg"
+    ,6542
+    ,0
+    ,2
+)
+;
+
+CREATE TABLE IF NOT EXISTS `bts`.`teamUploaded` (
+  `seq` INT NOT NULL AUTO_INCREMENT,
+  `type` TINYINT NULL,
+  `defaultNy` TINYINT NULL,
+  `sort` TINYINT NULL,
+  `originalName` VARCHAR(45) NULL,
+  `uuidName` VARCHAR(45) NULL,
+  `ext` VARCHAR(45) NULL,
+  `size` BIGINT NULL,
+  `delNy` TINYINT NULL,
+  `pseq` BIGINT NULL,
+  PRIMARY KEY (`seq`))
+ENGINE = InnoDB
+;
+
+insert into teamUploaded(
+	type
+	,defaultNy
+	,sort
+	,originalNameimage
+	,uuidName
+	,ext
+	,size
+	,delNy
+	,pseq
+)
+values(
+	0
+	,1
+	,0
+	,"모임용부장님등산사진.png"
+	,"4d9f9g8gh.png"
+	,"png"
+	,85456
+	,0
+	,2
+)
+;
+
+alter table memberUploaded change column orinalName originalName varchar(45);
 
 
-
-
+alter table team drop column image;
