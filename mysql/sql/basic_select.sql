@@ -12,3 +12,6 @@ inner join todo b on b.member_seq = a.seq
 ;
 -- 이너는 마스터는 다 나오고, 레프트 조인은 필요한 것만 보임 
 
+
+select
+	a. 
