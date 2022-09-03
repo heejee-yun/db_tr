@@ -15,6 +15,16 @@ order by
 ;
 
 
+-- 맴버 어드민
+		SELECT
+			a.*
+			, (select count(aa.seq) from cc aa where 1=1 and aa.userny = 0 and aa.seq = a.seq) as seqCount
+		FROM ccg a
+		WHERE 1=1
+			AND userny = 0
+			AND name LIKE CONCAT ('%', #{shValue}, '%')
+;
+            
 -- 로그인
 select id, name from member where id = "mi45" and pw = "$$$"
 ;
