@@ -24,6 +24,28 @@ order by
 			AND userny = 0
 			AND name LIKE CONCAT ('%', #{shValue}, '%')
 ;
+
+-- 회원 페이지 단에 보이는 
+select
+	a. seq
+    ,a. name
+    ,a. id
+    ,a. mobile
+    ,a. email
+    ,a. dob
+    ,a. gender
+    ,a. signupPath
+    ,a. goal 
+    ,a. joinDate
+    from member a
+    inner join cc b on a.gender = b.name
+    and ccg_seq = 4 
+    and resignny=0
+    order by 
+	seq asc
+    ;
+ 
+  
             
 -- 로그인
 select id, name from member where id = "mi45" and pw = "$$$"
