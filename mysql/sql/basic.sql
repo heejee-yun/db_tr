@@ -49,3 +49,10 @@ AND actor_type = ''
 UPDATE post_odition SET
 	aga = 0
 WHERE seq = 1;
+
+
+-- 핸드폰 뒷자리 검색
+
+select 
+right(mobile,4)
+from member;
